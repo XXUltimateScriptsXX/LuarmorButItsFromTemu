@@ -67,6 +67,8 @@ export default function handler(req, res) {
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      text-decoration: none;
+      display: inline-block;
     }
     .btn:hover {
       transform: translateY(-2px);
@@ -75,21 +77,6 @@ export default function handler(req, res) {
     .btn:active {
       transform: translateY(0);
     }
-    .rickroll {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      z-index: 9999;
-    }
-    .rickroll iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
   </style>
 </head>
 <body>
@@ -97,22 +84,8 @@ export default function handler(req, res) {
     <div class="icon">🔒</div>
     <h1>You Can't View This Content</h1>
     <p>Please Run In A Roblox Executor</p>
-    <button class="btn" onclick="upload()">Upload</button>
+    <a href="https://ia800501.us.archive.org/11/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" class="btn">Upload</a>
   </div>
-
-  <div class="rickroll" id="rickroll">
-    <iframe 
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ" 
-      allow="autoplay; encrypted-media" 
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <script>
-    function upload() {
-      document.getElementById('rickroll').style.display = 'block';
-    }
-  </script>
 </body>
 </html>`);
   }
