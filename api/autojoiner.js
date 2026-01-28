@@ -67,8 +67,6 @@ export default function handler(req, res) {
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-      text-decoration: none;
-      display: inline-block;
     }
     .btn:hover {
       transform: translateY(-2px);
@@ -77,6 +75,25 @@ export default function handler(req, res) {
     .btn:active {
       transform: translateY(0);
     }
+    .video-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-container.active {
+      display: flex;
+    }
+    video {
+      max-width: 90%;
+      max-height: 90%;
+    }
   </style>
 </head>
 <body>
@@ -84,8 +101,21 @@ export default function handler(req, res) {
     <div class="icon">🔒</div>
     <h1>You Can't View This Content</h1>
     <p>Please Run In A Roblox Executor</p>
-    <a href="https://ia800501.us.archive.org/11/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" class="btn">Upload</a>
+    <button class="btn" onclick="playVideo()">Upload</button>
   </div>
+
+  <div class="video-container" id="videoContainer">
+    <video id="rickroll" controls autoplay>
+      <source src="https://ia601509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <script>
+    function playVideo() {
+      document.getElementById('videoContainer').classList.add('active');
+      document.getElementById('rickroll').play();
+    }
+  </script>
 </body>
 </html>`);
   }
