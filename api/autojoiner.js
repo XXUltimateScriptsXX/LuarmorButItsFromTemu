@@ -7,35 +7,33 @@ export default function handler(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.status(200).send('print("Hello from Roblox!")');
   } else {
-    // Rickroll decoy
+    // Video demo page (like w3schools)
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(`<!DOCTYPE html>
 <html>
 <head>
-  <title>404 - Not Found</title>
+  <title>Video Demo</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #fff;
     }
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
+    h2 {
+      color: #04AA6D;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <iframe 
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-  </iframe>
+  <h2>HTML Video Example</h2>
+  <video width="320" height="240" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </body>
 </html>`);
   }
